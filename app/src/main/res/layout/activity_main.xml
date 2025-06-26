@@ -22,7 +22,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:padding="16dp" />
+            android:padding="16dp"
+            android:contentDescription="Dashboard title" />
 
         <!-- Balance Card -->
         <androidx.cardview.widget.CardView
@@ -46,7 +47,8 @@
                     android:layout_height="wrap_content"
                     android:text="Total Balance"
                     android:textSize="16sp"
-                    android:textColor="#888888" />
+                    android:textColor="#888888"
+                    android:contentDescription="Label for total balance" />
 
                 <TextView
                     android:id="@+id/textViewBalanceAmount"
@@ -57,7 +59,8 @@
                     android:textStyle="bold"
                     android:textColor="#207EFD"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp"
+                    android:contentDescription="Total balance amount" />
 
                 <!-- Income and Expense Row -->
                 <LinearLayout
@@ -79,7 +82,8 @@
                             android:layout_height="wrap_content"
                             android:text="Income"
                             android:textColor="#4CAF50"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:contentDescription="Income label" />
 
                         <TextView
                             android:id="@+id/textViewIncomeAmount"
@@ -88,7 +92,8 @@
                             android:text="R15000"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#4CAF50" />
+                            android:textColor="#4CAF50"
+                            android:contentDescription="Income amount" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -104,7 +109,8 @@
                             android:layout_height="wrap_content"
                             android:text="Expense"
                             android:textColor="#F44336"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:contentDescription="Expense label" />
 
                         <TextView
                             android:id="@+id/textViewExpenseAmount"
@@ -113,11 +119,54 @@
                             android:text="R9500"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            android:textColor="#F44336" />
+                            android:textColor="#F44336"
+                            android:contentDescription="Expense amount" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- Gamification Section -->
+        <LinearLayout
+            android:id="@+id/gamificationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/textViewPoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Points: 0"
+                android:textSize="16sp"
+                android:textColor="#207EFD"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="User points" />
+
+            <TextView
+                android:id="@+id/textViewLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level: 1"
+                android:textSize="16sp"
+                android:textColor="#207EFD"
+                android:contentDescription="User level" />
+        </LinearLayout>
+
+        <!-- Dark Mode Toggle Switch -->
+        <Switch
+            android:id="@+id/darkModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp" />
 
         <!-- Transactions RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
@@ -127,10 +176,10 @@
             android:layout_weight="1"
             android:padding="16dp"
             android:clipToPadding="false"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:contentDescription="List of transactions"
+            android:importantForAccessibility="yes" />
     </LinearLayout>
-
-
 
     <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -139,7 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="100dp"
-        android:contentDescription="Add"
+        android:contentDescription="Add new transaction"
         android:src="@drawable/plus"
         app:backgroundTint="#207EFD" />
 
@@ -153,6 +202,7 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/selector_bottom_nav"
-        app:itemTextColor="@color/selector_bottom_nav" />
+        app:itemTextColor="@color/selector_bottom_nav"
+        android:contentDescription="Bottom navigation menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

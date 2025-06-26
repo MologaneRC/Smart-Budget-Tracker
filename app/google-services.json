@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1092946337901",
+    "project_id": "smart-budget-tracker-4bbf5",
+    "storage_bucket": "smart-budget-tracker-4bbf5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092946337901:android:0e4f869400035677465f64",
+        "android_client_info": {
+          "package_name": "com.example.smartbudgettrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmrZFFQtlwJXoIJOOm4lo1oH49zJPhDB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

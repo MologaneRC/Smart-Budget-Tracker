@@ -12,4 +12,9 @@
         android:id="@+id/nav_stats"
         android:icon="@drawable/stats"
         android:title="Stats" />
+    <item
+        android:id="@+id/nav_calculator"
+        android:icon="@drawable/cal"
+        android:title="Calculator" />
+
 </menu>

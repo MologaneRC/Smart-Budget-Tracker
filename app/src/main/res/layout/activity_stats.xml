@@ -8,63 +8,96 @@
     android:background="#FFFFFF"
     tools:context=".StatsActivity">
 
-    <!-- Title Bar -->
-    <TextView
-        android:id="@+id/textViewStats"
+    <!-- Scrollable Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#207EFD"
-        android:text="Stats"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigationView"
+        android:fillViewport="true">
 
-    <!-- Static Pie Chart Image (use a drawable or image asset) -->
-    <ImageView
-        android:id="@+id/imageViewPie"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/textViewStats"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/pie" />
-
-    <!-- Labels -->
-    <LinearLayout
-        android:id="@+id/labelsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/imageViewPie"
-        android:padding="24dp">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Income: R15000"
-            android:textColor="#00BCD4"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Expenses: R9500"
-            android:textColor="#03A9F4"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
+            <!-- Title Bar -->
+            <TextView
+                android:id="@+id/textViewStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#207EFD"
+                android:text="Stats"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Remaining Money: R5500"
-            android:textColor="#0288D1"
-            android:textSize="16sp" />
-    </LinearLayout>
+            <!-- Bar Chart -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
 
-    <!-- Bottom Navigation -->
+            <!-- Labels -->
+            <LinearLayout
+                android:id="@+id/labelsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/textViewIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Income: R15000"
+                    android:textColor="#00BCD4"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewExpenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expenses: R9500"
+                    android:textColor="#03A9F4"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewRemaining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remaining Money: R5500"
+                    android:textColor="#0288D1"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/textViewPoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Points: 0"
+                    android:textColor="#FF9800"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level: 1"
+                    android:textColor="#FFC107"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation stays fixed -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -75,4 +108,5 @@
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/selector_bottom_nav"
         app:itemTextColor="@color/selector_bottom_nav" />
+
 </RelativeLayout>

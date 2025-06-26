@@ -68,6 +68,6 @@ Smart Budget Tracker is an intuitive Kotlin-based Android application designed t
 
 ---
 
-## 🔧 Setup Instructions
+[## 🔧 Setup Instructions
 
-1. Clone the repository:
+1. Clone the repository:](https://youtu.be/WFymOpjOuL8?si=rI_jfo2xqzdUCe_O)
